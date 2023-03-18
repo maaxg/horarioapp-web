@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Black Han Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Encode Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/singup.css" />
+
+    <title>Horario App - Cadastro</title>
+  </head>
+  <body>
+    <header>
+      <div class="row center-between content">
+        <a class="appname" href="http://127.0.0.1:5500/index.html"
+          >HorarioApp</a
+        >
+        <p>Bem Vindo {Fulano}</p>
+        <div>
+          <a class="headerlink" href="http://127.0.0.1:5500/html/signup.html"
+            >Minha conta</a
+          >
+          <a class="headerlink" href="http://127.0.0.1:5500/index.html"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <div class="signup-content">
+      <h2 class="content-title">Nova Disciplina</h2>
+
+      <form class="column form-content">
+        <section>
+          <label class="content-label">Nome: </label>
+          <input type="text" class="input" />
+        </section>
+        <section>
+          <label class="content-label">Email: </label>
+          <input type="email" class="input" />
+        </section>
+        <section>
+          <label class="content-label">Instituição de Ensino: </label>
+          <input type="text" class="input" />
+        </section>
+        <section>
+          <label class="content-label">Estado: </label>
+          <select class="input select" name="uf" id="uf">
+            <option>UF</option>
+            <option value="PE">PE</option>
+          </select>
+          <label class="content-label">Cidade: </label>
+          <select
+            class="input select"
+            name="city"
+            id="city"
+            style="width: 8rem"
+          >
+            <option>Cidade</option>
+            <option value="Recife">Recife</option>
+          </select>
+        </section>
+        <section>
+          <label class="content-label">Senha: </label>
+          <input type="password" class="input" />
+        </section>
+
+        <input
+          type="button"
+          class="button"
+          title="signup"
+          name="signup"
+          value="Cadastrar"
+        />
+      </form>
+    </div>
+    <footer class="footer">
+      <p class="footer-p">HorarioApp - 2023</p>
+    </footer>
+  </body>
+</html>
