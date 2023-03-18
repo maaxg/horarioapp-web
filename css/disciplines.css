@@ -1,0 +1,39 @@
+.discipline-card {
+  width: 219px;
+  min-height: 321px;
+  background: rgba(217, 217, 217, 0.3);
+  padding: 12px;
+  margin-left: 24px;
+}
+
+.discipline-card-title {
+  font-size: 1rem;
+  font-family: "Poppins";
+  font-weight: 700;
+  text-align: center;
+  color: var(--dark-grey);
+}
+
+.discipline-card-label {
+  font-size: 1rem;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: var(--dark-grey);
+}
+
+.discipline-card-value {
+  font-size: 1rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  color: var(--dark-grey);
+  margin-top: -12px;
+}
+.discipline-card-section {
+}
+
+.list-content {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+}

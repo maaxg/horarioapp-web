@@ -1,15 +1,8 @@
 section {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 24px;
-}
-
-footer {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin-bottom: 0px;
 }
 
 .signup-content {
@@ -31,6 +24,7 @@ footer {
   font-family: "Encode Sans";
   font-size: 1.375rem;
   font-weight: 600;
+
   color: var(--dark-grey);
 }
 
@@ -50,12 +44,4 @@ footer {
   background-color: var(--white);
   margin-right: 12px;
   color: var(--dark-grey);
-}
-
-.footer-p {
-  font-size: 1rem;
-  font-family: "Poppins";
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.5);
-  text-align: center;
 }

@@ -35,6 +35,13 @@ a {
   cursor: pointer;
 }
 
+.header-text-center {
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+  font-family: "Encode Sans";
+  font-weight: 800;
+}
+
 .headerlink:focus {
   color: var(--secondary-color);
   transition: 1s;
@@ -51,6 +58,7 @@ a {
   font-family: "Black Han Sans";
   cursor: pointer;
 }
+
 .button {
   background-color: var(--primary-color);
   margin-bottom: 12px;
@@ -82,6 +90,22 @@ a {
 .lading-image {
   width: 50%;
   object-fit: contain;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+.footer-p {
+  font-size: 1rem;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 /* End langing page content */

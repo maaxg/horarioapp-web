@@ -17,11 +17,18 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Poppins"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <link rel="stylesheet" href="../css/variables.css" />
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/singup.css" />
-
+    <link rel="stylesheet" href="../css/disciplines.css" />
     <title>Horario App - Cadastro</title>
   </head>
   <body>
@@ -30,7 +37,7 @@
         <a class="appname" href="http://127.0.0.1:5500/index.html"
           >HorarioApp</a
         >
-        <p>Bem Vindo {Fulano}</p>
+        <p class="header-text-center">Bem Vindo {Fulano}</p>
         <div>
           <a class="headerlink" href="http://127.0.0.1:5500/html/signup.html"
             >Minha conta</a
@@ -42,55 +49,53 @@
       </div>
     </header>
 
-    <div class="signup-content">
+    <div class="signup-content" id="create-discipline">
       <h2 class="content-title">Nova Disciplina</h2>
 
-      <form class="column form-content">
+      <form id="create-discipline-form" class="column form-content">
         <section>
-          <label class="content-label">Nome: </label>
+          <label class="content-label">Dia da semana: </label>
+          <input
+            type="date"
+            placeholder="Selecione o dia da semana"
+            class="input"
+          />
+        </section>
+        <section>
+          <label class="content-label">Nome da disciplina: </label>
           <input type="text" class="input" />
         </section>
         <section>
-          <label class="content-label">Email: </label>
-          <input type="email" class="input" />
+          <label class="content-label">Hora de início: </label>
+          <input type="text" placeholder="07:00" class="input" />
         </section>
         <section>
-          <label class="content-label">Instituição de Ensino: </label>
+          <label class="content-label">Hora de término: </label>
+          <input type="text" placeholder="07:00" class="input" />
+        </section>
+        <section>
+          <label class="content-label">Nome do professor: </label>
           <input type="text" class="input" />
         </section>
         <section>
-          <label class="content-label">Estado: </label>
-          <select class="input select" name="uf" id="uf">
-            <option>UF</option>
-            <option value="PE">PE</option>
-          </select>
-          <label class="content-label">Cidade: </label>
-          <select
-            class="input select"
-            name="city"
-            id="city"
-            style="width: 8rem"
-          >
-            <option>Cidade</option>
-            <option value="Recife">Recife</option>
-          </select>
-        </section>
-        <section>
-          <label class="content-label">Senha: </label>
-          <input type="password" class="input" />
+          <label class="content-label">Sala: </label>
+          <input type="text" class="input" />
         </section>
 
         <input
-          type="button"
+          id="create-discipline-button"
+          type="submit"
           class="button"
-          title="signup"
-          name="signup"
-          value="Cadastrar"
+          title="create-discipline"
+          name="create-discipline"
+          value="CADASTRAR"
         />
       </form>
     </div>
-    <footer class="footer">
-      <p class="footer-p">HorarioApp - 2023</p>
-    </footer>
+    <div class="signup-content" id="show-disciplines">
+      <h2 class="content-title">Meu horário de aula</h2>
+      <div id="list-content" class="list-content"></div>
+    </div>
+    <script src="../js/disciplines.js"></script>
   </body>
 </html>
