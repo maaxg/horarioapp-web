@@ -2,7 +2,8 @@ const signUpForm = document.getElementById("signup-form");
 const signInForm = document.getElementById("signin-form");
 const signUpButton = document.getElementById("signup-button");
 const signInButton = document.getElementById("signin-button");
-
+const logoutButton = document.getElementById("logout-button");
+const headerTextCenter = document.getElementById("header-text-center");
 const formValidation = (entries) => {
   let valid = true;
   for (let pair of entries.entries()) {
@@ -53,13 +54,23 @@ const signin = (ev) => {
       window.location = "http://127.0.0.1:5500/html/disciplines.html";
     } else alert("Usuário não encontrado");
   }
-  /*   if (u) {
-   
-  } */
 };
 
-const onLoad = () => {};
-onLoad();
+const logout = (ev) => {
+  ev.preventDefault();
+  localStorage.removeItem("user");
 
-signUpForm?.addEventListener("submit", signup, false);
-signInForm?.addEventListener("submit", signin, false);
+  window.location = "http://127.0.0.1:5500/html/login.html";
+};
+
+const onLoadAuth = () => {
+  signUpForm?.addEventListener("submit", signup, false);
+  signInForm?.addEventListener("submit", signin, false);
+  logoutButton?.addEventListener("click", logout);
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    headerTextCenter.innerHTML = `Bem vindo ${user.name}`;
+  }
+};
+
+onLoadAuth();

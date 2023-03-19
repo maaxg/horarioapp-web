@@ -37,14 +37,12 @@
         <a class="appname" href="http://127.0.0.1:5500/index.html"
           >HorarioApp</a
         >
-        <p class="header-text-center">Bem Vindo {Fulano}</p>
+        <p id="header-text-center" class="header-text-center"></p>
         <div>
-          <a class="headerlink" href="http://127.0.0.1:5500/html/signup.html"
+          <a class="headerlink" 
             >Minha conta</a
           >
-          <a class="headerlink" href="http://127.0.0.1:5500/index.html"
-            >Logout</a
-          >
+          <a id="logout-button" class="headerlink">Logout</a>
         </div>
       </div>
     </header>
@@ -55,33 +53,60 @@
       <form id="create-discipline-form" class="column form-content">
         <section>
           <label class="content-label">Dia da semana: </label>
-          <input
-            type="date"
-            placeholder="Selecione o dia da semana"
-            class="input"
-          />
+          <select
+            class="input select"
+            name="weekDay"
+            id="weekDay"
+            style="width: 100%"
+          >
+            <option>Selecione o dia da semana...</option>
+            <option value="Segunda-feira">Segunda-feira</option>
+            <option value="Terça-feira">Terça-feira</option>
+            <option value="Quarta-feira">Quarta-feira</option>
+            <option value="Quinta-feira">Quinta-feira</option>
+            <option value="Sexta-feira">Sexta-feira</option>
+            <option value="Sábado">Sábado</option>
+            <option value="Domingo">Domingo</option>
+          </select>
         </section>
         <section>
           <label class="content-label">Nome da disciplina: </label>
-          <input type="text" class="input" />
+          <input name="disciplineName" type="text" class="input" />
         </section>
         <section>
           <label class="content-label">Hora de início: </label>
-          <input type="text" placeholder="07:00" class="input" />
+          <select
+            class="input select"
+            name="startAt"
+            id="startAt"
+            style="width: 100%"
+          >
+            <option value="07:00">07:00</option>
+            <option value="22:00">22:00</option>
+          </select>
         </section>
         <section>
           <label class="content-label">Hora de término: </label>
-          <input type="text" placeholder="07:00" class="input" />
+          <select
+            class="input select"
+            name="endAt"
+            id="endAt"
+            style="width: 100%"
+          >
+          <option value="07:00">07:00</option>
+          <option value="22:00">22:00</option>
+          </select>
+        </section>
         </section>
         <section>
           <label class="content-label">Nome do professor: </label>
-          <input type="text" class="input" />
+            <input name="teacher" type="text" class="input" />
         </section>
         <section>
           <label class="content-label">Sala: </label>
-          <input type="text" class="input" />
+          <input name="room" type="text" class="input" />
         </section>
-
+       
         <input
           id="create-discipline-button"
           type="submit"
@@ -94,8 +119,11 @@
     </div>
     <div class="signup-content" id="show-disciplines">
       <h2 class="content-title">Meu horário de aula</h2>
-      <div id="list-content" class="list-content"></div>
+      <div id="list-content" class="list-content">
+     
+      </div>
     </div>
     <script src="../js/disciplines.js"></script>
+    <script src="../js/authentication.js"></script>
   </body>
 </html>
