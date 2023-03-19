@@ -34,12 +34,13 @@
   <body>
     <header>
       <div class="row center-between content">
-        <a class="appname" href="http://127.0.0.1:5500/index.html"
+        <a class="appname" href="http://127.0.0.1:5500/html/disciplines.html"
           >HorarioApp</a
         >
         <p id="header-text-center" class="header-text-center"></p>
         <div>
           <a class="headerlink" 
+            id="myaccount-button"
             >Minha conta</a
           >
           <a id="logout-button" class="headerlink">Logout</a>
@@ -71,7 +72,7 @@
         </section>
         <section>
           <label class="content-label">Nome da disciplina: </label>
-          <input name="disciplineName" type="text" class="input" />
+          <input id="disciplineName" name="disciplineName" type="text" class="input" />
         </section>
         <section>
           <label class="content-label">Hora de início: </label>
@@ -100,11 +101,11 @@
         </section>
         <section>
           <label class="content-label">Nome do professor: </label>
-            <input name="teacher" type="text" class="input" />
+            <input id="teacher" name="teacher" type="text" class="input" />
         </section>
         <section>
           <label class="content-label">Sala: </label>
-          <input name="room" type="text" class="input" />
+          <input id="room" name="room" type="text" class="input" />
         </section>
        
         <input

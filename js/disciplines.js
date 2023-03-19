@@ -3,33 +3,10 @@ const createDisciplineDiv = document.getElementById("create-discipline");
 const showDisciplinesDiv = document.getElementById("show-disciplines");
 const deleteItemButton = document.getElementById("delete-item");
 const editItem = document.getElementById("edit-item");
-
-
-const DISCIPLINES_ARRAY = [
-  {
-    weekDay: "Segunda-feira",
-    disciplineName: "Sistemas Operacionais",
-    time: "07:30 - 10:00",
-    teacher: "Fulano de tal",
-    room: "Lab 07",
-  },
-  {
-    weekDay: "Terça-feira",
-    disciplineName: "Sistemas Operacionais",
-    time: "07:30 - 10:00",
-    teacher: "Fulano de tal",
-    room: "Lab 09",
-  },
-  {
-    weekDay: "Quarta-feira",
-    disciplineName: "Sistemas Operacionais",
-    time: "07:30 - 10:00",
-    teacher: "Fulano de tal",
-    room: "Lab 08",
-  },
-];
+const myaccountButton = document.getElementById("myaccount-button");
+let editableItemId = undefined;
 /* on submit form */
-const onsubmit = (ev) => {
+const onsubmit = (ev, editableId) => {
   ev.preventDefault();
   const formData = new FormData(ev.target);
   const discipline = Object.fromEntries(formData);
@@ -39,7 +16,15 @@ const onsubmit = (ev) => {
   if (savedDisciplines) {
     disciplines = savedDisciplines;
   }
-  disciplines.push({ ...discipline, id: new Date().getTime() });
+
+  if (Boolean(editableId)) {
+    const idx = disciplines.findIndex((item) => item.id === editableId);
+    if (idx !== -1)
+      disciplines[idx] = { ...discipline, id: disciplines[idx].id };
+  } else {
+    disciplines.push({ ...discipline, id: new Date().getTime() });
+  }
+
   localStorage.setItem("disciplines", JSON.stringify(disciplines));
 
   createDisciplineDiv.style.display = "none";
@@ -47,13 +32,45 @@ const onsubmit = (ev) => {
   loadDisciplines();
 };
 
-const onClickDeleteDiscipline = (item) => {
-  console.log("aa", item);
+const onClickEditDiscipline = (itemId) => {
+  createDisciplineDiv.style.display = "flex";
+  showDisciplinesDiv.style.display = "none";
+  const disciplines = JSON.parse(localStorage.getItem("disciplines"));
+
+  if (disciplines.length) {
+    const discipline = disciplines.find((item) => item.id === itemId);
+    if (discipline) {
+      const weekDay = document.getElementById("weekDay");
+      weekDay.value = discipline.weekDay;
+      const disciplineName = document.getElementById("disciplineName");
+      disciplineName.value = discipline.disciplineName;
+      const startAt = document.getElementById("startAt");
+      startAt.value = discipline.startAt;
+      const endAt = document.getElementById("endAt");
+      endAt.value = discipline.endAt;
+      const teacher = document.getElementById("teacher");
+      teacher.value = discipline.teacher;
+      const room = document.getElementById("room");
+      room.value = discipline.room;
+      editableItemId = itemId;
+    }
+  }
+};
+
+const onClickDeleteDiscipline = (itemId) => {
+  const disciplines = JSON.parse(localStorage.getItem("disciplines"));
+  if (disciplines.length) {
+    const idx = disciplines.findIndex((item) => item.id === itemId);
+    disciplines.splice(idx, 1);
+    localStorage.setItem("disciplines", JSON.stringify(disciplines));
+    window.location = "http://127.0.0.1:5500/html/disciplines.html";
+  }
 };
 
 const loadDisciplines = () => {
   const disciplines = JSON.parse(localStorage.getItem("disciplines"));
-  if (disciplines) {
+
+  if (disciplines.length) {
     createDisciplineDiv.style.display = "none";
     showDisciplinesDiv.style.display = "flex";
     return (document.getElementById("list-content").innerHTML = disciplines.map(
@@ -100,11 +117,14 @@ const loadDisciplines = () => {
           <span             
             id="edit-item"
             style="cursor: pointer;" 
+            onclick="onClickEditDiscipline(${item.id})"
             class="material-symbols-outlined">
             edit_square
           </span>
+
           <span 
             id="delete-item"
+            onclick="onClickDeleteDiscipline(${item.id})"
             style="cursor: pointer;" 
             class="material-symbols-outlined">
             delete
@@ -113,7 +133,6 @@ const loadDisciplines = () => {
         </div>
       </div>
     </div>
-  
   </div>
     `
     ));
@@ -123,14 +142,15 @@ const loadDisciplines = () => {
   }
 };
 
-const onLoad = () => {
-  /*   createDisciplineDiv.style.display = "flex";
-  showDisciplinesDiv.style.display = "none"; */
-  // localStorage.removeItem("disciplines");
+const onClickMyAccount = (ev) => {
+  ev.preventDefault();
+  createDisciplineDiv.style.display = "flex";
+  showDisciplinesDiv.style.display = "none";
+};
+
+const onLoadDisciplines = () => {
+  form?.addEventListener("submit", (ev) => onsubmit(ev, editableItemId));
+  myaccountButton?.addEventListener("click", onClickMyAccount);
   loadDisciplines();
 };
-onLoad();
-/* end of submit form */
-
-form.addEventListener("submit", onsubmit);
-deleteItemButton?.addEventListener("click", onClickDeleteDiscipline);
+onLoadDisciplines();
