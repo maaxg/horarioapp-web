@@ -44,18 +44,18 @@
     <div class="signup-content">
       <h2 class="content-title">Novo usuário</h2>
 
-      <form class="column form-content">
+      <form id="signup-form" class="column form-content">
         <section>
           <label class="content-label">Nome: </label>
-          <input type="text" class="input" />
+          <input name="name" type="text" class="input" />
         </section>
         <section>
           <label class="content-label">Email: </label>
-          <input type="email" class="input" />
+          <input name="email" type="email" class="input" />
         </section>
         <section>
           <label class="content-label">Instituição de Ensino: </label>
-          <input type="text" class="input" />
+          <input name="institution" type="text" class="input" />
         </section>
         <section>
           <label class="content-label">Estado: </label>
@@ -76,14 +76,15 @@
         </section>
         <section>
           <label class="content-label">Senha: </label>
-          <input type="password" class="input" />
+          <input name="password" type="password" class="input" />
         </section>
 
         <input
-          type="button"
+          type="submit"
           class="button"
           title="signup"
           name="signup"
+          id="signup-button"
           value="Cadastrar"
         />
       </form>
@@ -91,5 +92,6 @@
     <footer class="footer">
       <p class="footer-p">HorarioApp - 2023</p>
     </footer>
+    <script src="../js/authentication.js"></script>
   </body>
 </html>

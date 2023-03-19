@@ -43,17 +43,26 @@
       <div></div>
       <div class="card">
         <h2 class="card-title">Login</h2>
-        <form
-          class="column signin-form"
-          action="http://127.0.0.1:5500/html/disciplines.html"
-        >
-          <input type="email" placeholder="E-mail" class="input" />
-          <input type="password" placeholder="Senha" class="input" />
-          <input type="submit" class="button" name="login" value="Login" />
+        <form id="signin-form" class="column signin-form">
+          <input name="email" type="email" placeholder="E-mail" class="input" />
+          <input
+            name="password"
+            type="password"
+            placeholder="Senha"
+            class="input"
+          />
+          <input
+            type="submit"
+            class="button"
+            name="login"
+            id="signin-button"
+            value="Login"
+          />
         </form>
       </div>
 
       <img src="../assets/image.png" class="lading-image" />
     </div>
+    <script src="../js/authentication.js"></script>
   </body>
 </html>
