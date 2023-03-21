@@ -32,7 +32,7 @@ const signup = (ev) => {
 
     localStorage.setItem("users", JSON.stringify(users));
     console.log(users);
-    window.location = "http://127.0.0.1:5500/html/disciplines.html";
+    window.location = "disciplines.html";
     //console.log(Object.fromEntries(formData));
   }
   // ...or output as an object
@@ -51,7 +51,7 @@ const signin = (ev) => {
     );
     if (founded) {
       localStorage.setItem("user", JSON.stringify(founded));
-      window.location = "http://127.0.0.1:5500/html/disciplines.html";
+      window.location = "disciplines.html";
     } else alert("Usuário não encontrado");
   }
 };
@@ -60,7 +60,7 @@ const logout = (ev) => {
   ev.preventDefault();
   localStorage.removeItem("user");
 
-  window.location = "http://127.0.0.1:5500/html/login.html";
+  window.location = "login.html";
 };
 
 const onLoadAuth = () => {

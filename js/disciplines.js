@@ -63,7 +63,7 @@ const onClickDeleteDiscipline = (itemId) => {
     const idx = disciplines.findIndex((item) => item.id === itemId);
     disciplines.splice(idx, 1);
     localStorage.setItem("disciplines", JSON.stringify(disciplines));
-    window.location = "http://127.0.0.1:5500/html/disciplines.html";
+    window.location = "disciplines.html";
   }
 };
 
