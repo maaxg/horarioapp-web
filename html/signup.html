@@ -51,22 +51,27 @@
           <label class="content-label">Instituição de Ensino: </label>
           <input name="institution" type="text" class="input" />
         </section>
-        <section>
-          <label class="content-label">Estado: </label>
-          <select class="input select" name="uf" id="uf">
-            <option>UF</option>
-            <option value="PE">PE</option>
-          </select>
-          <label class="content-label">Cidade: </label>
-          <select
-            class="input select"
-            name="city"
-            id="city"
-            style="width: 8rem"
-          >
-            <option>Cidade</option>
-            <option value="Recife">Recife</option>
-          </select>
+        <section style="justify-content: center">
+          <div style="margin-left: 24px; display: flex; align-items: center">
+            <label style="margin-right: 22px" class="content-label"
+              >Estado:
+            </label>
+            <select style="width: 60px" class="select" name="uf" id="uf">
+              <option>UF</option>
+              <option value="PE">PE</option>
+            </select>
+          </div>
+          <div style="display: flex; align-items: center">
+            <label
+              style="margin-left: 12px; margin-right: 12px"
+              class="content-label"
+              >Cidade:
+            </label>
+            <select style="width: 100px" class="select" name="city" id="city">
+              <option>Cidade</option>
+              <option value="Recife">Recife</option>
+            </select>
+          </div>
         </section>
         <section>
           <label class="content-label">Senha: </label>

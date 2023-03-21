@@ -55,10 +55,10 @@
         <section>
           <label class="content-label">Dia da semana: </label>
           <select
-            class="input select"
+            class="input select custom-select"
             name="weekDay"
             id="weekDay"
-            style="width: 100%"
+      
           >
             <option>Selecione o dia da semana...</option>
             <option value="Segunda-feira">Segunda-feira</option>
@@ -72,15 +72,15 @@
         </section>
         <section>
           <label class="content-label">Nome da disciplina: </label>
-          <input id="disciplineName" name="disciplineName" type="text" class="input" />
+          <input id="disciplineName" name="disciplineName" type="text" class="input custom-select" />
         </section>
         <section>
           <label class="content-label">Hora de início: </label>
           <select
-            class="input select"
+  
+            class="input select custom-select"
             name="startAt"
             id="startAt"
-            style="width: 100%"
           >
             <option value="07:00">07:00</option>
             <option value="22:00">22:00</option>
@@ -89,10 +89,9 @@
         <section>
           <label class="content-label">Hora de término: </label>
           <select
-            class="input select"
+            class="input select custom-select"
             name="endAt"
             id="endAt"
-            style="width: 100%"
           >
           <option value="07:00">07:00</option>
           <option value="22:00">22:00</option>
@@ -101,11 +100,11 @@
         </section>
         <section>
           <label class="content-label">Nome do professor: </label>
-            <input id="teacher" name="teacher" type="text" class="input" />
+            <input id="teacher" name="teacher" type="text" class="input custom-select" />
         </section>
         <section>
           <label class="content-label">Sala: </label>
-          <input id="room" name="room" type="text" class="input" />
+          <input id="room" name="room" type="text" class="input custom-select" />
         </section>
        
         <input
@@ -125,6 +124,6 @@
       </div>
     </div>
     <script src="../js/disciplines.js"></script>
-    <script src="../js/authentication.js"></script>
+    <script src="../js/authentication.js"></script> 
   </body>
 </html>

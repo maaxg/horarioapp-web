@@ -35,3 +35,7 @@
   flex-direction: row;
   align-items: flex-start;
 }
+
+.custom-select {
+  flex: 2;
+}
