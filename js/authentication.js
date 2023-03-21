@@ -60,7 +60,7 @@ const logout = (ev) => {
   ev.preventDefault();
   localStorage.removeItem("user");
 
-  window.location = "login.html";
+  window.location = "./login.html";
 };
 
 const onLoadAuth = () => {
