@@ -27,8 +27,12 @@
       <div class="row center-between content">
         <a class="appname" href="index.html">HorarioApp</a>
         <div>
-          <a class="headerlink" href="/html/signup.html">Cadastro</a>
-          <a class="headerlink" href="/html/login.html">Login</a>
+          <a id="headerLinkSignUp" class="headerlink" href="/html/signup.html"
+            >Cadastro</a
+          >
+          <a id="headerLinkLogin" class="headerlink" href="/html/login.html"
+            >Login</a
+          >
         </div>
       </div>
     </header>
@@ -37,4 +41,16 @@
       <img src="./assets/image.png" class="lading-image" />
     </div>
   </body>
+  <script>
+    if (document.URL.includes("github")) {
+      const signUp = document.getElementById("headerLinkSignUp");
+      const login = document.getElementById("headerLinkLogin");
+      signUp.addEventListener("click", () => {
+        document.location = "/horarioapp-web/html/signup.html";
+      });
+      login.addEventListener("click", () => {
+        document.location = "/horarioapp-web/html/login.html";
+      });
+    }
+  </script>
 </html>
