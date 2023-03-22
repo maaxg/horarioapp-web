@@ -42,7 +42,9 @@
     </div>
   </body>
   <script>
+    console.log(document.URL.includes);
     if (document.URL.includes("github")) {
+      console.log("github");
       const signUp = document.getElementById("headerLinkSignUp");
       const login = document.getElementById("headerLinkLogin");
       signUp.addEventListener("click", () => {
