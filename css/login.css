@@ -23,9 +23,10 @@
   margin-bottom: 12px;
   border-radius: 5px;
   padding-left: 12px;
-  font-size: 18px;
-  width: 277px;
-  height: 38px;
+  font-size: 1.125rem;
+  width: 17.313rem;
+  height: 2.375rem;
+  align-self: center;
   font-family: "Encode Sans";
 }
 

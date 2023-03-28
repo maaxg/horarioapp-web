@@ -66,11 +66,13 @@ a {
   padding: 8px 12px;
   border-width: 0;
   color: var(--white);
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 700;
-  height: 42px;
+  height: 2.625rem;
   font-family: "Encode Sans";
   cursor: pointer;
+  width: 22.563rem;
+  align-self: center;
 }
 
 /* End header */
@@ -109,3 +111,26 @@ footer {
 }
 
 /* End langing page content */
+
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .landing-container {
+    flex: 1;
+    flex-direction: column;
+  }
+  .lading-image {
+    width: 100%;
+  }
+  .landing-title {
+    text-align: center;
+  }
+  .headerlink {
+    margin-left: 0;
+  }
+}
